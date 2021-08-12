@@ -1,0 +1,133 @@
+{% extends 'usuarios/base_usuario.html' %}
+{% load static %} 
+{% block content %} 
+
+{# Menu #}
+{% include 'usuarios/partials/_menu.html' %}
+
+<div class="container-fluid">
+    <div class="row mb-3">
+        <div class="col-lg-4">
+            <div class=" mb-3" style="background: #202733">
+                <div class="card-body text-center shadow"><img class="rounded-circle mb-3 mt-4" src="{% static 'assets/img/dogs/image2.jpeg'%}" width="160" height="160">
+                    <div class="mb-3"><button class="btn" style="background: #191f29" type="submit">Mudar</button></div>
+                </div>
+            </div>
+            <div class="shadow mb-4" style="background: #202733">
+                <div class="card-header border-0 py-3" style="background: #191f29;">
+                    <h6 class="fw-bold m-0" style="color: rgb(103,103,103);">Verificações</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row flex-column">
+                        <div class="col-12 col-xxl-10 d-xxl-flex">
+                            <p><i class="fas fa-check" style="font-size: 15px;color: rgb(45,180,11);"></i>&nbsp;- E-mail Verificado</p>
+                        </div>
+                        <div class="col-xxl-10">
+                            <p><i class="fas fa-check" style="font-size: 15px;color: rgb(45,180,11);"></i>&nbsp;- Documento Verificado</p>
+                        </div>
+                        <div class="col-xxl-10">
+                            <p><i class="fas fa-check" style="font-size: 15px;color: rgb(45,180,11);"></i>&nbsp;- Autenticação de Dois Fatores</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="row">
+                <div class="col">
+                    <div class="shadow mb-3">
+                        <div class="card-header border-0 py-3" style="background: #191f29">
+                            <p class="m-0 fw-bold" style="color: rgb(103,103,103);">Configurações do Usuário</p>
+                        </div>
+                        
+                        {% for dados_perfil in dados_perfil %}
+                 {{ dados_perfil.conta }}
+              
+                        <div class="card-body" style="background: #202733">
+                            <form>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="username">
+                                                <strong>Nome</strong>
+                                            </label>
+                                            <input disabled="disabled" class="form-control border-0" type="text" id="nome" placeholder="{{ dados_perfil.nome }}" name="username" style="background: #373e48">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="first_name">
+                                                <strong>CPF</strong>
+                                            </label>
+                                            <input disabled="disabled" class="form-control border-0" type="text" id="first_name" placeholder="{{ dados_perfil.cpf }}" name="first_name" style="background: #373e48">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="email">
+                                                <strong>E-mail</strong>
+                                            </label>
+                                            <input class="form-control border-0" type="email" id="email" placeholder="{{ dados_perfil.email }}" name="email" style="background: #373e48">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="last_name">
+                                                <strong>Contato</strong><br>
+                                            </label>
+                                            <input class="form-control border-0" type="text" id="last_name" placeholder="{{ dados_perfil.numero_celular }}" name="last_name" style="background: #373e48">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><button class="btn" style="background: #191f29" type="submit">Salvar</button></div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class=" shadow">
+                        <div class="card-header border-0 py-3" style="background: #191f29">
+                            <p class="m-0 fw-bold" style="color: rgb(103,103,103);">Configurações de Contato</p>
+                        </div>
+                        <div class="card-body" style="background: #202733">
+                            <form>
+                                <div class="mb-3">
+                                    <label class="form-label" for="address">
+                                        <strong>Endereço</strong>
+                                    </label>
+                                    <input class="form-control border-0" type="text" id="address" placeholder="Venda das Pedras" name="address" style="background: #373e48">
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="city">
+                                                <strong>Cidade</strong>
+                                            </label>
+                                            <input class="form-control border-0" type="text" id="city" placeholder="Itaboraí" name="city" style="background: #373e48">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="country">
+                                                <strong>Estado</strong>
+                                            </label>
+                                            <input class="form-control border-0" type="text" id="estado" placeholder="Rio de Janeiro" name="country" style="background: #373e48">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3"><button class="btn" style="background: #191f29" type="submit">Salvar</button></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    {% endfor %}
+{# Footer #}
+{% include 'usuarios/partials/_footer.html' %}
+
+{% endblock %}  

@@ -1,0 +1,76 @@
+{% extends 'usuarios/base_usuario.html' %}
+{% load static  %}
+{% block content %}
+
+{% include 'partials/_menu.html' %}
+
+<div style="width: 100%; background: #eef4f7">
+<div class="container" style="">
+        <div class="row d-flex justify-content-center" style="padding-top: 60px;  min-height: 90vh">
+            <div class="col-md-9 col-lg-12 col-xl-10">
+                <div class="card shadow-lg o-hidden border-0 my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-flex">
+                                <div class="flex-grow-1 bg-login-image" style="background-image: url({% static 'assets/img/img_home/foto_sobre.jpg' %}); background-position: right;"></div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+                                        <h4 class="text-dark mb-4">Crie sua conta!</h4>
+                                    </div>
+
+                                    {% include 'usuarios/partials/_alertas.html' %}
+
+                                    <form class="user" action="{% url 'cadastro' %} " method="POST">
+                                        {% csrf_token %}
+
+                                        <div class="mb-3">
+                                            <label>Nome:</label>
+                                            <input class="form-control form-control-user rounded-0" type="text" id="nome" name="nome" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>Sobrenome:</label>
+                                            <input class="form-control form-control-user rounded-0" type="text" id="sobrenome" name="sobrenome" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>Email:</label>
+                                            <input class="form-control form-control-user rounded-0" type="email" id="email" name="email" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>Senha:</label>
+                                            <input class="form-control form-control-user rounded-0" type="password" id="senha" name="senha" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>Confirme sua senha:</label>
+                                            <input class="form-control form-control-user rounded-0" type="password" id="confirmacao_senha" name="confirmacao_senha" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>CPF:</label>
+                                            <input class="form-control form-control-user rounded-0" type="text" id="CPF" maxlength="11" name="CPF" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>RG:</label>
+                                            <input class="form-control form-control-user rounded-0" type="text" id="RG" maxlength="9" name="RG" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label>N° Celular:</label>
+                                            <input class="form-control form-control-user rounded-0" type="text" id="numero_celular" name="numero_celular" required>
+                                        </div>
+                                        <hr>
+                                        <button class="btn btn-primary d-block btn-user w-100" type="submit">Criar conta</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'partials/_footer.html' %}
+
+{% endblock %}

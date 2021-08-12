@@ -1,0 +1,16 @@
+.btn-fixo {
+  position: fixed;
+  /*z-index: 100000;*/
+  height: 60px;
+  width: 60px;
+  padding: 5px;
+  top: 85vh;
+  /*margin-top: 315px;*/
+  margin-right: px;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  background-color: #00b760;
+  padding: 0;
+}
+

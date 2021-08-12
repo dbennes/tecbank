@@ -1,0 +1,61 @@
+
+<!-- Modal -->
+<div class="modal fade" id="modal_transacoes" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-color">
+      <div class="modal-header" style="border-bottom: 1px solid #14161c">
+        <h5 class="modal-title" id="exampleModalLongTitle" style=" font-size: 18px; color: #949494;"><i class="fa fa-window-maximize alt fa-2x" style=" font-size: 17px;"></i> - Transações no Período de 30 dias</h5>
+        <button type="button" class="close border-0" data-dismiss="modal" aria-label="Close" style="background-color: #20273300">
+          <div>
+            <i class="fas fa-circle -alt fa-2x" style="color: #29cd3f; font-size: 12px;"></i>
+            <i class="fas fa-circle -alt fa-2x" style="color: #fabf2f; font-size: 12px;"></i>
+            <i class="fas fa-circle -alt fa-2x" style="color: #f46455; font-size: 12px;"></i>
+         </div>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="card-body overflow-auto" style= "font-size: 12px; background: #202733; max-height: 50vh ">
+          <table class="table table-bordered">
+
+          {# Card Transferencias #}
+
+            <tbody class="border border-dark" >
+              <tr>                                        
+                <th style="width: 60px;" class = "align-middle text-center">N° OP </th>
+                <th colspan = "2" class = "align-middle text-center">Operação</th>
+                <th class = "align-middle text-center">Valor</th>
+                <th class = "align-middle text-center">Data</th>
+              </tr>
+
+              {% if transferencias %}
+                {% for transferencias in transferencias %}
+
+                  <tr style="border-color: #3a3b45">
+                    <td class = "align-middle text-center"> {{ transferencias.numero_operacao }} </td>
+                    <td style="width: 50px;" class = "text-center " s>
+                      <i class="fas fa-exchange-alt fa-2x" style="color: #ff5089; font-size: 18px"></i> 
+                    </td>
+                    <td class = "align-middle">{{ transferencias.operacao }} Realizada </td>
+                    <td class = "align-middle text-center">R$ {{ transferencias.valor_transferido }}</td>
+                    <td class = "align-middle text-center">{{ transferencias.data_transferencia }}</td>                                                 
+                  </tr>
+                
+                {% endfor %}
+              {% else %}
+
+                <tr style="border-color: #d0d0d0">
+                  <td colspan = "2" class = "align-middle text-center"> Não foram feitas transações até o momento.</td>
+                </tr>
+
+              {% endif %}
+
+            </tbody>
+          </table>                                     
+        </div>
+      </div>
+      <div class="modal-footer" style="border-top: 1px solid #14161c">
+        <button type="button" class="btn" data-dismiss="modal" style="background-color: #ff8787; color: #860000">Sair</button>
+      </div>
+    </div>
+  </div>
+</div>

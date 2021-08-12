@@ -1,0 +1,232 @@
+{% extends 'usuarios/base_usuario.html' %}
+{% load static %} 
+{%block content%}    
+
+{# Menu #}
+{% include 'usuarios/partials/_menu.html' %}
+
+  {# PAGINA INICIAL #}
+
+<div class="container-fluid">
+ 
+    <div class="row">
+   
+        <div class="col-lg-4 col-xl-4">
+            <div class="row d-md-flex flex-column justify-content-md-center align-items-md-center">
+
+            {# Conteudo do Saldo #}
+
+                <div class="col-auto col-md-9 col-xl-12 col-xxl-12 mb-4">
+                    <div class="rounded shadow border-start-warning py-2" style="background: #202733">
+                        <div class="card-body">
+                            <div class="row align-items-center no-gutters">
+                                <div class="col-2 col-lg-2" style="color: rgb(23,48,231);">
+                                  <i class="fas fa-dollar-sign fa-2x" style="color: #da7d1b;"></i>
+                                </div>
+                                <div class="col-7 col-sm-6 col-md-5 col-lg-9 col-xl-6 col-xxl-6 text-start me-2">
+                                    <div class="text-dark fw-bold h5 mb-0" style="font-size: 1.7rem;">
+                                      <span style="color: rgb(255 255 255);font-size: 0.9em;">R$ 
+
+                                      {% if dados_perfil %}
+                                        {% for dados_perfil in dados_perfil %}
+
+                                          {{ dados_perfil.saldo_brl }}
+                                        
+                                        {% endfor %}
+                                      {% else %}
+                                        0,00
+                                      {% endif %}
+
+                                     </span>
+                                    </div>
+                                    <div class="text-uppercase text-warning fw-bold text-xs mb-1">
+                                      <span class="text-start" style="color: #95a09ccf ;font-size: 9.2px;">SALDO DISPONÍVEL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                  <div class="col-auto col-md-9 col-xl-12 col-xxl-12 mb-4" >
+                  <button type="button" class="btn" style="width: 100%; " >
+                    <div class="rounded shadow border-start-primary py-2" style="color: #202733; background: #202733">    
+                        <div class="card-body " style="color: rgb(92 199 160);">
+                            <div class="row  no-gutters">
+
+                                <div class="card-body" style="background: #202733; ">
+                                    <div class="chart-area" style="" >
+                                      <canvas  data-bss-chart="{
+                                          &quot;type&quot;:&quot;doughnut&quot;,&quot;data&quot;:{&quot;labels&quot;:[&quot;Direct&quot;,&quot;Social&quot;,&quot;Referral&quot;],&quot;datasets&quot;:[{&quot;label&quot;:&quot;&quot;,&quot;backgroundColor&quot;:[&quot;#ff8505&quot;,&quot;#58ffc9&quot;,&quot;#647ca4&quot;],&quot;borderColor&quot;:[&quot;#ff8505&quot;,&quot;rgb(32,39,51)&quot;,&quot;rgb(32,39,51)&quot;],&quot;data&quot;:[&quot;50&quot;,&quot;0&quot;,&quot;0&quot;]}]},&quot;options&quot;:{&quot;maintainAspectRatio&quot;:false,&quot;legend&quot;:{&quot;display&quot;:false},&quot;title&quot;:{}}}"></canvas></div>
+                                    <div class="text-center small mt-4">
+                                      <span class="me-2"><i class="fas fa-circle" style="color: #ff8505"></i>&nbsp;BRL</span>
+                                      <span class="me-2"><i class="fas fa-circle text-success"></i>&nbsp;USD</span>
+                                      <span class="me-2"><i class="fas fa-circle text-info"></i>&nbsp;EUR</span></div>
+                                </div> 
+
+
+                            </div>
+                        </div>
+                    </div>
+                  </button>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="col-lg-7 col-xl-8">
+            <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                <h3 class="mb-0" style="color: rgb(255,255,255);font-weight: normal;font-family: Roboto, sans-serif;">Bem vindo, {{ user.first_name }}</h3>
+                <a class="btn btn-sm d-none d-sm-inline-block" role="button" href="#" style="background: #202733 ;color: rgb(255,255,255);">
+                  <i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Reportar Problemas
+                </a>
+            </div>
+
+            <p>
+              {% for dados_perfil in dados_perfil %}
+                Agencia: {{ dados_perfil.agencia }} Conta: {{ dados_perfil.conta }}-{{ dados_perfil.digito_conta }}
+              {% endfor %}
+            </p>
+
+            <p style="color: rgb(175, 175, 175);">Com Techbank, você movimenta seu dinheiro e faz todos os seus pagamentos de uma maneira simples e rápida.<br></p>
+
+            <div class="row">
+              <div class="col">
+                <div class="row d-md-flex flex-row justify-content-md-center align-items-md-center">
+
+                {#Conteudo de Transferencia#}
+
+                  <div class="col-12 col-md-4 col-xl-4 col-xxl-4 mb-4" >
+                    <button  data-toggle="modal" data-target="#modaltransferenciated_doc" type="button" class="btn" style="width: 100%; padding: 0px;" >
+                      <div class="rounded shadow border-start-primary py-2" style="color: #202733; background: #202733">    
+                          <div class="card-body" style="color: rgba(201,197,191,0);">
+                              <div class="row align-items-center no-gutters">
+                                  <div class="col-auto" style="color: rgb(0,30,255);">
+                                    <i class="fas fa-exchange-alt fa-2x" style="color: #ccc5be;"></i>
+                                  </div>
+                                  <div class="col me-2">
+                                      <div class="d-flex text-uppercase text-primary fw-bold text-xs mb-1">
+                                        <span style="color: #afaead;font-weight: normal;">
+                                          <strong>Fazer Transferência</strong><br>
+                                        </span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  {# INCLUDE DO MODAL DE TRANSFERENCIA TED/DOC #}
+                  {% include 'usuarios/partials/_modal_ted_doc.html' %}                                  
+
+                  {# Conteudo de Pix #}
+
+                  <div class="col-12 col-md-4 col-xl-4 col-xxl-4 mb-4">
+                    <button type="button" data-toggle="modal" data-target="#modal_pix" class="btn" style="width: 100%; padding: 0px">
+                      <div class="rounded shadow border-start-success py-2" style="background: #202733;">
+                          <div class="card-body">
+                              <div class="row align-items-center no-gutters">
+                                  <div class="col-auto">
+                                    <i class="fas fa-university fa-2x " style="color: #ccc5be;"></i>
+                                  </div>
+                                  <div class="col me-2" style="color: rgb(220,123,3);">
+                                      <div class="d-flex text-uppercase text-success fw-bold text-xs mb-1">
+                                        <span class="text-left" style="color: #afaead;">Transferência pix</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </button>
+                  </div>
+
+                  {# INCLUDE DO MODAL DE TRANSFERENCIA PIX #}
+                  {% include 'usuarios/partials/_modal_pix.html' %}
+
+                  {# Conteudo para Boleto #}
+
+                  <div class="col-12 col-md-4 col-xl-4 col-xxl-4 mb-4 ">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#modal_boleto" style="width: 100%; padding: 0px">                                    
+                      <div class="rounded shadow border-start-info py-2" style="background: #202733;">
+                          <div class="card-body">
+                              <div class="row align-items-center no-gutters">
+                                  <div class="col-auto">
+                                    <i class="fas fa-barcode fa-2x " style="color: #ccc5be;"></i>
+                                  </div>
+                                  <div class="col me-2 " style="color: #afaead;">
+                                      <div class="d-flex text-uppercase text-left text-info fw-bold text-xs mb-1">
+                                        <span style="color: #afaead;">gerar boleto</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                    </button>                                  
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {# INCLUDE DO MODAL DE TRANSFERENCIA BOLETO #}
+                  {% include 'usuarios/partials/_modal_boleto.html' %}
+
+                  {% include 'usuarios/partials/_alertas.html' %}
+
+            <div class=" shadow mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center" style = "background: #191f29">
+                    <h6 class="" style="color: rgb(156,156,156); padding-top: 10px">Últimas Transações</h6>
+                    <div class="dropdown no-arrow">                        
+                        <i class="fas fa-ellipsis-v text-gray-400"></i>  
+                    </div>
+                </div>
+                <div class="card-body overflow-auto" style= "font-size: 12px; background: #202733; max-height: 290px ">
+                  <table class="table table-bordered">
+
+                  {# Card Transferencias #}
+
+                    <tbody class="border border-dark" >
+                      <tr>                                        
+                        <th style="width: 60px;" class = "align-middle text-center">N° OP </th>
+                        <th colspan = "2" class = "align-middle text-center">Operação</th>
+                        <th class = "align-middle text-center">Valor</th>
+                        <th class = "align-middle text-center">Data</th>
+                      </tr>
+
+                      {% if transferencias %}
+                        {% for transferencias in transferencias %}
+
+                          <tr style="border-color: #3a3b45">
+                            <td class = "align-middle text-center"> {{ transferencias.numero_operacao }} </td>
+                            <td style="width: 50px;" class = "text-center " s>
+                              <i class="fas fa-exchange-alt fa-2x" style="color: #ff5089; font-size: 18px"></i> 
+                            </td>
+                            <td class = "align-middle">{{ transferencias.operacao }} Realizada </td>
+                            <td class = "align-middle text-center">R$ {{ transferencias.valor_transferido }}</td>
+                            <td class = "align-middle text-center">{{ transferencias.data_transferencia }}</td>                                                 
+                          </tr>
+                        
+                        {% endfor %}
+                      {% else %}
+
+                        <tr style="border-color: #3a3b45">
+                          <td colspan = "5" class = "align-middle text-center"> Não foram feitas transações até o momento.</td>
+                        </tr>
+
+                      {% endif %}
+
+                    </tbody>
+                  </table>                                     
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+</div>
+
+{# Footer #}
+{% include 'usuarios/partials/_footer.html' %}
+
+{% endblock %}             

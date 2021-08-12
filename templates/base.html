@@ -1,0 +1,47 @@
+{% load static  %}
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>TechBank</title>
+        <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap2.min.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome-all.min.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/fonts/fontawesome5-overrides.min.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/bootstrap/css/modal.css'%}">
+
+        <link rel="stylesheet" href="{% static 'assets/css/Article-List.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/Brands.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/Chat-Whatapp.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/Contact-Form-Clean.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/Features-Clean.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/Footer-Dark.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/Highlight-Clean.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/Highlight-Phone.css'%}">
+
+        <link rel="stylesheet" href="{% static 'assets/css/Login-Form-Dark.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/Navigation-with-Button.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css'%}">
+        <link rel="stylesheet" href="{% static 'assets/css/Testimonials.css'%}">
+
+
+        <link rel="icon" href=" {% static 'assets/img/img_home/logo.png'%}" type="image/x-icon">
+
+    </head>
+    <body id="page-top">
+
+        {# Menu #}
+        {% include 'partials/_menu.html' %}
+
+        {# Conteudo #}
+        {% block content %} {% endblock %}
+
+        {# Footer #}
+        {% include 'partials/_footer.html' %}
+
+    </body>
+</html>

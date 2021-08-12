@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="66px" height="65px" viewBox="0 0 66 65" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>banco-brasil</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Desktop-HD" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-536.000000, -5005.000000)">
+        <g id="banks" transform="translate(0.000000, 4668.000000)" fill-rule="nonzero">
+            <g id="banco-brasil" transform="translate(536.000000, 337.000000)">
+                <rect id="Rectangle-3" fill="#FEF14D" x="0" y="0" width="65.8666667" height="65" rx="8"></rect>
+                <g id="Group-2" transform="translate(10.722481, 10.833333)" fill="#0562A5">
+                    <polyline id="Fill-2" points="21.547002 0.163318341 0.482467339 14.5011494 9.24969496 20.2826729 19.7253271 13.1134861 15.5701239 10.3419576 21.2616891 6.46952237 33.6121585 14.7922467 13.3504002 28.6059399 17.7329454 31.5535375 42.9460046 14.5033198 42.8891023 14.4455344 21.547002 0.163318341"></polyline>
+                    <polyline id="Fill-3" points="42.5530313 0.169286785 33.7882083 6.06475333 38.1707534 9.07013637 42.5530313 6.06475333 42.5530313 0.169286785"></polyline>
+                    <polyline id="Fill-4" points="0.337940854 43.2736633 9.10276416 37.3781967 4.72048609 34.3728137 0.337940854 37.3781967 0.337940854 43.2736633"></polyline>
+                    <polyline id="Fill-5" points="21.5373847 43.261455 42.6016521 28.9233526 33.8344247 23.1421004 23.3590596 30.3110159 27.5139956 33.0828157 21.8226976 36.955251 9.47222834 28.6325266 29.7337193 14.8188334 25.3514413 11.8709645 0.138114958 28.9214536 0.195017252 28.979239 21.5373847 43.261455"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

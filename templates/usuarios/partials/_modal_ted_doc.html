@@ -1,0 +1,75 @@
+
+<!-- Modal -->
+<div class="modal fade" id="modaltransferenciated_doc" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content modal-color">
+      <div class="modal-header" style="border-bottom: 1px solid #14161c">
+        <h5 class="modal-title" id="exampleModalLongTitle" style=" font-size: 18px; color: #949494;"><i class="fa fa-window-maximize alt fa-2x" style=" font-size: 17px;"></i> - Fazer Transferência</h5>
+        <button type="button" class="close border-0" data-dismiss="modal" aria-label="Close" style="background-color: #20273300">
+          <div>
+            <i class="fas fa-circle -alt fa-2x" style="color: #29cd3f; font-size: 12px;"></i>
+            <i class="fas fa-circle -alt fa-2x" style="color: #fabf2f; font-size: 12px;"></i>
+            <i class="fas fa-circle -alt fa-2x" style="color: #f46455; font-size: 12px;"></i>
+         </div>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form action="{% url 'transferencia' %}" method="POST">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+               <label for="exampleFormControlSelect1">Selecione método de transferência:</label>
+               <select class="form-control border-0" id="numero_operacao" name="numero_operacao" style="background: #373e48" >
+                  <option value="230">Transferência TED</option>
+                  <option value="232">Transferência DOC</option>
+               </select>
+            </div><BR>
+            <div class="form-group">
+               <label for="exampleFormControlSelect1">Instituição:</label>
+               <select class="form-control border-0" name="banco_favorecido" style="background: #373e48">
+                  {% for lista_bancos in lista_bancos %} 
+                     <option value="{{ lista_bancos.value }}">{{ lista_bancos.value }} - {{lista_bancos.label }}</option>
+                  {% endfor %}            
+               </select>
+            </div>
+            <br>
+            <div class="row">
+               <div class="col">
+                  <label for="exampleInputEmail1">Insira o CPF:</label>
+                  <input type="text" maxlength="11" name="cpf_favorecido" class="form-control border-0" placeholder="Insira o CPF" style="background: #373e48">
+               </div>
+               <div class="col">
+                  <label for="exampleInputEmail1" >Valor:</label>
+                  <input type="text" maxlength="7" id="valor1" value="0" name="valor_brl" onkeyup="formatarMoeda()" class="form-control border-0" placeholder="R$ 0,00" style="background: #373e48">
+               </div>
+            </div>
+            <br>
+            <div class="form-group">
+               <label for="exampleInputEmail1">Nome:</label>
+               <input type="text" class="form-control border-0" name="nome_favorecido" aria-describedby="emailHelp" placeholder="Nome" style="background: #373e48">
+            </div>
+            <BR>
+            <div class="row">
+               <div class="col">
+                  <label for="exampleInputEmail1">Agência:</label>
+                  <input type="text" class="form-control border-0" name="agencia_favorecido" placeholder="Agência" style="background: #373e48">
+               </div>
+               <div class="col">
+                  <label for="exampleInputEmail1">Conta:</label>
+                  <input type="text" class="form-control border-0" name="conta_favorecido" placeholder="Conta" style="background: #373e48">
+               </div>
+               <div class="col-3">
+                  <label for="exampleInputEmail1">Dígito:</label>
+                  <input type="text" class="form-control border-0" name="digito_conta_favorecido" placeholder="Dígito" style="background: #373e48">
+               </div>
+            </div>
+      </div>
+         <div class="modal-footer" style="border-top: 1px solid #14161c">
+            <button type="button" class="btn" data-dismiss="modal" style="background-color: #ff8787; color: #860000">Cancelar</button>
+            <button type="submit" class="btn" style="background-color: #67ea80; color: black">Transferir</button>
+         </div>
+      </form>
+    </div>
+  </div>
+</div>

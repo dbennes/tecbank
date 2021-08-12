@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %} 
+{%block content%}    
+
+  {# PAGINA INICIAL #}
+
+ <div style="height: 100vh;background: #f9f9f9;color: rgb(33, 37, 41);">
+        <div style="height: 100%;background: url({% static 'assets/img/img_home/testessss.png'%}) top right / contain no-repeat;filter: hue-rotate(0deg) invert(0%) saturate(147%);opacity: 0.78;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-xl-6 d-xl-flex flex-column justify-content-xl-center align-items-xl-start" style="height: 60vh;padding-top: 93px;">
+                        <p class="flash animated infinite" style="color: rgb(255 141 0);margin-bottom: 0;font-weight: bold;font-family: Roboto, sans-serif;">.Bem vindo ao Futuro! /&gt;</p>
+                        <h1 style="color: #2b2b2b;font-size: 2.2em;font-weight: bold;font-family: Roboto, sans-serif;filter: brightness(200%) contrast(200%) saturate(200%);">TEC Banker a instituição para transformar seus métodos&nbsp;<strong>de pagamento.</strong><br></h1>
+                        <h1 style="color: #2b2b2b;font-size: 2.2em;font-weight: bold;font-family: Roboto, sans-serif;filter: brightness(200%) contrast(200%) saturate(200%);"></h1>
+                        <p style="color: #2b2b2b;width: 80%;filter: brightness(200%) contrast(200%) saturate(200%);">Automatize sua rotina de pagamentos com segurança e agilidade. Ganhe economia de tempo e dinheiro.<br></p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row" style="margin-top: 32px;">
+                    <div class="col-md-4">
+                        <p style="#2b2b2b;filter: brightness(200%) contrast(200%) saturate(200%);">Usuários:</p>
+                        <h1 id="numero" data-aos="fade-right" data-aos-duration="750" data-aos-delay="250" style="color: rgb(115 65 2);font-size: 53px;font-weight: bold;font-family: Roboto, sans-serif;filter: brightness(200%) contrast(200%) saturate(200%);">+6758</h1>
+                    </div>
+                    <div class="col-md-4">
+                        <p style="#2b2b2b;filter: brightness(200%) contrast(200%) saturate(200%);">Empresas:</p>
+                        <h1 id="numero2" data-aos="fade" data-aos-duration="800" data-aos-delay="300" style="color: rgb(115 65 2);font-size: 53px;font-weight: bold;font-style: normal;font-family: Roboto, sans-serif;filter: brightness(200%) contrast(200%) saturate(200%);">+100</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row" style="margin-top: 34px;">
+            <div class="col-md-6 d-flex d-xxl-flex justify-content-center align-items-center order-last order-sm-last order-lg-first justify-content-xxl-center align-items-xxl-center" data-bss-hover-animate="bounce"><img data-bss-hover-animate="bounce" src="{% static 'assets/img/img_home/transfeera-funcionalidades-lotes-pagamentos.svg'%}" style="width: 60%;"></div>
+            <div class="col-md-6 order-first order-sm-first">
+                <h2 style="color: rgb(255 141 0);font-family: Roboto, sans-serif;font-weight: bold;"><br>Porque usar a TEC Banker?<br></h2>
+                <p class="text-start" style="color: rgb(116,116,116);width: 95%;">Nosso principal objetivo é ajudar as empresas a automatizarem suas rotinas de pagamentos, para que assim elas fiquem livres para focar no que é mais importante em seu negócio.</p>
+                <p class="text-start" style="color: rgb(116,116,116);width: 95%;">Com a automação de processos ajudamos nossos clientes a economizar com rotinas operacionais e também com taxas bancárias. </p>
+                <p class="text-start" style="color: rgb(116,116,116);width: 95%;">Nosso processo de pagamentos é automatizado em diferentes bancos, dessa forma entregamos agilidade e transparência à sua operação de pagamentos.</p>
+                <p class="text-start" style="color: rgb(116,116,116);width: 95%;">Por usarmos contas em diferentes bancos, e na maior parte do tempo executarmos transferências entre contas, também conseguimos executar uma operação estendida, fazendo transações de TED e DOC em D+0 para os principais bancos do Brasil para todas ordens de pagamentos recebidas até as 19 horas diariamente.<br><br></p>
+            </div>
+        </div>
+    </div>
+    <section class="article-list" style="background: rgb(255,255,255);">
+        <div class="container">
+            <div class="row articles">
+                <div class="col-sm-6 col-md-4 d-flex d-xxl-flex flex-column justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center item" data-aos="fade" data-aos-duration="700" data-aos-delay="200" data-aos-once="true"><a href="#"><i class="fas fa-laptop-code pulse animated infinite" style="font-size: 64px;color: rgb(255 141 0);"></i></a>
+                    <h3 class="name" style="color: rgb(140,140,140);">Tecnologia</h3>
+                    <p class="description" style="width: 70%;">Desenvolvemos o melhor da tecnologia para automatizar os processos de pagamentos e facilitar o recebimento rápido.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right" style="color: rgb(51,51,51);"></i></a>
+                </div>
+                <div class="col-sm-6 col-md-4 d-flex d-xxl-flex flex-column justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center item" data-aos="fade" data-aos-duration="700" data-aos-delay="200" data-aos-once="true"><a href="#"></a><i class="fa fa-globe pulse animated infinite" style="font-size: 64px;color: rgb(255 141 0);"></i>
+                    <h3 class="name" style="color: rgb(140,140,140);">Transferências com Agilidade&nbsp;</h3>
+                    <p class="description" style="width: 70%;">São realizadas transferências nacionais e internacionais com grande facilidade e perfomance.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right" style="color: rgb(51,51,51);"></i></a>
+                </div>
+                <div class="col-sm-6 col-md-4 d-flex d-xxl-flex flex-column justify-content-center align-items-center justify-content-xxl-center align-items-xxl-center item" data-aos="fade" data-aos-duration="700" data-aos-delay="200" data-aos-once="true"><a href="#"></a><i class="fas fa-piggy-bank pulse animated infinite" style="font-size: 64px;color: rgb(255 141 0);"></i>
+                    <h3 class="name" style="color: rgb(140,140,140);">Receba e Transfira</h3>
+                    <p class="description" style="width: 70%;">Receba e transfira com facilidade.<br>Em breve serão realizadas transferências e recebimentos.</p><a class="action" href="#"><i class="fa fa-arrow-circle-right" style="color: rgb(51,51,51);"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="d-flex d-lg-flex d-xl-flex d-xxl-flex flex-column justify-content-center align-items-start justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-center" style="background: #eef4f7;padding-top: 33px;padding-bottom: 30px;">
+        <div class="container">
+            <div class="row d-flex d-xxl-flex justify-content-start align-items-center justify-content-xxl-center align-items-xxl-center">
+                <div class="col-md-3">
+                    <h1 class="text-center d-flex justify-content-start" style="color: rgb(97,98,98);font-size: 25px;"><i class="fas fa-user-shield" style="color: rgb(101,101,101);"></i>&nbsp;- SEGURANÇA</h1>
+                </div>
+                <div class="col-md-3">
+                    <h1 class="text-center d-flex justify-content-start" style="color: rgb(97,98,98);font-size: 25px;"><i class="fas fa-paper-plane" style="color: rgb(101,101,101);"></i>&nbsp; - AGILIDADE</h1>
+                </div>
+                <div class="col-md-3">
+                    <h1 class="text-center d-flex justify-content-start" style="color: rgb(97,98,98);font-size: 25px;"><i class="fas fa-history" style="color: rgb(101,101,101);"></i>&nbsp; - PERFORMANCE</h1>
+                </div>
+                <div class="col-md-3">
+                    <h1 class="text-center d-flex justify-content-start" style="color: rgb(97,98,98);font-size: 25px;"><i class="fas fa-recycle" style="color: rgb(101,101,101);"></i>&nbsp; - SUSTENTÁVEL</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="brands">
+        <section class="testimonials-clean" style="background: rgb(255,255,255);">
+            <div class="container">
+                <div class="row people">
+                    <div class="col-md-6 col-lg-4 item">
+                        <div class="box">
+                            <p class="description"><br>Excelente, sistema simples e super funcional, layout muito bom, permite visualizar corretamente as compras e pagamentos.<br><br></p>
+                        </div>
+                        <div class="author"><img class="rounded-circle" src="{% static 'assets/img/img_home/1.jpg'%}">
+                            <h5 class="name">Leonardo Paim</h5>
+                            <p class="title">Usuário</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 item">
+                        <div class="box">
+                            <p class="description">Sistema super ágil e fácil de se mexer, sem falar que as transferências são sempre bem transacionadas e sem problemas.</p>
+                        </div>
+                        <div class="author"><img class="rounded-circle" src="{% static 'assets/img/img_home/3.jpg'%}">
+                            <h5 class="name">Arthur Cantanhede</h5>
+                            <p class="title">Usuário<br></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 item">
+                        <div class="box">
+                            <p class="description"><br>Um dos melhores atendimentos já existentes, a TEC é super eficiente e prestativas quando se precisa de ajuda.</p>
+                        </div>
+                        <div class="author"><img class="rounded-circle" src="{% static 'assets/img/img_home/2.jpg'%}">
+                            <h5 class="name">Juliana Maciel</h5>
+                            <p class="title">Usuário<br></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <section class="highlight-clean">
+        <div class="container">
+            <div class="text-center">
+                <h2 style="font-size: 46px;font-family: Roboto, sans-serif;font-weight: bold;color: #4d565d;">Transforme sua rotina de pagamentos<br></h2>
+            </div>
+            <h3 class="text-center" style="color: rgb(152,152,153);font-family: Roboto, sans-serif;">Estamos prontos para realizar seus pagamentos diretamente na conta<br>bancária de seu favorecido, em qualquer banco brasileiro.<br></h3>
+            <div class="brands">
+              <a href="#"> 
+                <img src="{% static 'assets/img/img_home/transfeera-banco-itau.svg'%} ">
+                <img src="{% static 'assets/img/img_home/transfeera-banco-brasil.svg'%} ">
+                <img src="{% static 'assets/img/img_home/transfeera-banco-sicredi.svg'%} ">
+                <img src="{% static 'assets/img/img_home/transfeera-banco-bradesco.svg'%} ">
+              </a>
+            </div>
+        </div>
+    </section>
+    <section class="highlight-phone">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="intro">
+                        <h2 style="font-family: Roboto, sans-serif;font-weight: bold;font-size: 37px;">Em breve o Aplicativo</h2>
+                        <p>Pelo app, você poderá gerenciar as solicitações dos seus pagamento, acompanha o status das propostas, além de acessar todos os conteúdos de sugestões.<br>Fácil e prático.<br></p><a class="btn btn-primary" onclick="contador()" role="button" href="#" style="color: rgb(249,249,249);background: rgb(44,44,44);">sABER MAIS</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="d-none d-md-block phone-mockup" data-aos="fade-down-right" data-aos-duration="850" data-aos-delay="250"><img data-aos="fade" class="device" src="{% static 'assets/img/img_home/phone.svg'%}">
+                        <div class="screen" style="background: url({% static 'assets/img/img_home/app.png'%} ) no-repeat;background-size: cover;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="features-clean">
+        <div class="container">
+            <h1 class="text-center" style="font-family: Roboto, sans-serif;color: #4d565d;"><br><strong>Segurança. A gente leva isso muito a sério</strong><br></h1>
+            <h3 class="text-center" style="font-family: Roboto, sans-serif;color: rgb(152,152,153);">Veja porque é seguro e confiável usar a TEC Banker<br></h3>
+            <div class="intro"></div>
+            <div class="row d-lg-flex d-xl-flex d-xxl-flex justify-content-lg-center justify-content-xl-center justify-content-xxl-center features">
+                <div class="col-sm-6 col-lg-5 col-xl-5 col-xxl-5 item"><i class="fa fa-bank icon" style="color: rgb(68,67,68);"></i>
+                    <h3 class="name">Segurança igual aos bancos<br></h3>
+                    <p class="description" style="width: 80%;">Utilizamos a mesma tecnologia dos sistemas bancários, aquela mesma que você já confia no seu internet banking.<br></p>
+                </div>
+                <div class="col-sm-6 col-lg-5 col-xl-5 col-xxl-5 item"><i class="fas fa-key icon" style="color: rgb(68,67,68);"></i>
+                    <h3 class="name">Criptografia dos dados<br></h3>
+                    <p class="description" style="width: 80%;">Criptografamos todos os dados do início ao fim do processo, por isso garantimos que nada, nenhum dado seu será visível.<br></p>
+                </div>
+                <div class="col-sm-6 col-lg-5 col-xl-5 col-xxl-5 item"><i class="fa fa-user-circle-o icon" style="color: rgb(68,67,68);"></i>
+                    <h3 class="name">Gerente de contas dedicado<br></h3>
+                    <p class="description" style="width: 80%;">Cada usuário tem o acompanhamento de um gerente de contas. Ele é responsável pela segurança e sucesso da sua transferência e sempre que precisar de algo, estará pronto para atender.<br></p>
+                </div>
+                <div class="col-sm-6 col-lg-5 col-xl-5 col-xxl-5 item"><i class="fa fa-refresh icon" style="color: rgb(68,67,68);"></i>
+                    <h3 class="name">Devolução do pagamento<br></h3>
+                    <p class="description" style="width: 80%;">Caso aconteça algum erro no pagamento ou exista alguma dúvida sobre a veracidade das informações fornecidas, seu dinheiro retorna imediatamente para sua conta.<br></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+{% endblock %}             
